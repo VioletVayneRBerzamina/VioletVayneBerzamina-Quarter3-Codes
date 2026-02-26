@@ -1,0 +1,21 @@
+
+names = ["Me", "Lia", "Jake"]
+
+steps = [
+    [4500, 5200, 4800, 5000, 5300],
+    [4000, 4100, 3900, 4200, 4600],
+    [6000, 5800, 5900, 6100, 6200]
+]
+
+num_days = len(steps[0])
+
+day_totals = []
+for day in range(num_days):
+    total = sum(steps[person][day] for person in range(len(steps)))
+    day_totals.append(total)
+    print(f"Total steps on Day {day + 1}: {total}")
+
+
+max_total = max(day_totals)
+max_day = day_totals.index(max_total) + 1  # +1 to make it human-readable
+print(f"\nMost active day overall: Day {max_day} with {max_total} total steps")
