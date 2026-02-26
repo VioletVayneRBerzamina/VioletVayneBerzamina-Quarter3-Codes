@@ -1,0 +1,22 @@
+
+names = ["Me", "Lia", "Jake"]
+
+steps = [
+    [4500, 5200, 4800, 5000, 5300],
+    [4000, 4100, 3900, 4200, 4600],
+    [6000, 5800, 5900, 6100, 6200]
+]
+
+totals = []
+for i in range(len(steps)):
+    total = sum(steps[i])
+    totals.append(total)
+    print(f"{names[i]}'s total steps: {total}")
+
+max_total = max(totals)
+max_index = totals.index(max_total)
+print(f"\nHighest total steps: {names[max_index]} with {max_total} steps")
+
+min_total = min(totals)
+difference = max_total - min_total
+print(f"Difference between highest and lowest totals: {difference} steps")
